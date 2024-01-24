@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Styling section, giving background
+			image and dimensions */
+        section {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(240, 238, 235);
+            background-size: cover;
+        }
+
+        /* Styling the left floating section */
+        section .leftBox {
+            width: 100%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+            box-sizing: border-box;
+            
+        }
+
+        /* Styling the background of 
+			left floating section */
+        section .leftBox .content {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            transition: .5s;
+        }
+
+        /* Styling the hover effect 
+			of left floating section */
+        section .leftBox .content:hover {
+            background: #e91e63;
+        }
+
+        /* Styling the header of left 
+			floating section */
+        section .leftBox .content h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        /* Styling the paragraph of 
+			left floating section */
+        section .leftBox .content p {
+            margin: 10px 0 0;
+            padding: 0;
+            background-color: rgb(51, 47, 39);
+
+        }
+
+        /* Styling the three events section */
+        section .events {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            float: right;
+            box-sizing: border-box;
+        }
+
+        /* Styling the links of 
+		the events section */
+        section .events ul {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Styling the lists of the event section */
+        section .events ul li {
+            list-style: none;
+            background: #fff;
+            box-sizing: border-box;
+            height: 200px;
+            margin: 15px 0;
+        }
+
+        /* Styling the time class of events section */
+        section .events ul li .time {
+            position: relative;
+            padding: 20px;
+            background: #262626;
+            box-sizing: border-box;
+            width: 30%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            transition: .5s;
+        }
+
+        /* Styling the hover effect
+			of events section */
+        section .events ul li:hover .time {
+            background: #e91e63;
+        }
+
+        /* Styling the header of time 
+			class of events section */
+        section .events ul li .time h2 {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 60px;
+            line-height: 30px;
+        }
+
+        /* Styling the texts of time 
+		class of events section */
+        section .events ul li .time h2 span {
+            font-size: 30px;
+        }
+
+        /* Styling the details 
+		class of events section */
+        section .events ul li .details {
+            padding: 20px;
+            background: #fff;
+            box-sizing: border-box;
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+
+        /* Styling the header of the 
+		details class of events section */
+        section .events ul li .details h3 {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+
+        /* Styling the lists of details 
+		class of events section */
+        section .events ul li .details p {
+            position: relative;
+            margin: 10px 0 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        /* Styling the links of details
+		class of events section */
+        section .events ul li .details a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1.5px solid #262626;
+            margin-top: 8px;
+            font-size: 18px;
+            transition: .5s;
+        }
+
+        /* Styling the details class's hover effect */
+        section .events ul li .details a:hover {
+            background: #e91e63;
+            color: #fff;
+            border-color: #e91e63;
+        }
+        .poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="#">Navbar scroll</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="https://banner2.cleanpng.com/20180404/xyq/kisspng-agra-delhi-package-tour-travel-agent-tamilnadu-5ac480b4793aa4.3587905215228274444966.jpg"
+                    alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+                Indian Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">contacts us</a>
+                    </li>
+
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search Tourist Place Name</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://banner2.cleanpng.com/20180404/xyq/kisspng-agra-delhi-package-tour-travel-agent-tamilnadu-5ac480b4793aa4.3587905215228274444966.jpg" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+            Indian Tourism
+          </a>
+        </div>
+      </nav> -->
+    <h1>Places to Visit in India</h1>
+    <section>
+        <div class="leftBox">
+            <div class="content">
+                <h2>
+                    Ram Mandir
+                </h2>
+                <img src="https://images.livemint.com/img/2020/08/20/1600x900/4e645542-d643-11ea-b961-ad37760ffd4d_1597910076685_1597910169976.jpg"
+                    width="525px" height="">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14245.606449118648!2d82.2031322!3d26.795338!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a0792bc55a0d5%3A0x46c4d8c08f3a9a55!2sRam%20Sabha%20Mandir%2C%20Ayodhya!5e0!3m2!1sen!2sin!4v1706082544779!5m2!1sen!2sin" width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Location</iframe>
+
+                <p>  
+                    राम मंदिर एक महत्वपूर्ण हिंदू मंदिर है जो वर्तमान में भारत के उत्तर प्रदेश के अयोध्या में निर्माणाधीन है। जनवरी २०२४ में इसका गर्भगृह तथा प्रथम तल बनकर तैयार है और २२ जनवरी २०२४ को इसमें श्रीराम के बाल रूप में विग्रह की प्राणप्रतिष्ठा की गई।
+                    <br>
+                    The site is the former location of the Babri Masjid, which was built in the 16th century. The idols
+                    of Rama and Sita were placed in the mosque in 1949, before it was attacked and demolished in
+                    1992.[8][9][22] In 2019, the Supreme Court of India delivered the verdict to give the disputed land
+                    to Hindus for the construction of a temple, while Muslims would be given land elsewhere to construct
+                    a mosque.[23] The court referenced a report from the Archaeological Survey of India (ASI) as
+                    evidence suggesting the presence of a structure beneath the demolished Babri Masjid, that was found
+                    to be non-Islamic.[24] However, the ASI claims were heavily disputed by critics as contradictory and
+                    unreliable.[25][26][27][28][29] But, these became futile as the Supreme Court, after detailed
+                    proceedings, accepted the ASI report as valid. The Supreme Court in its landmark jugdement concluded
+                    that the underlying structure beneath the mosque was not an Islamic structure, and also that there
+                    is clear evidence that the disputed site was believed by Hindus as the Janmabhoomi (birthsite) of
+                    Rama
+
+                </p>
+                
+                <div class="d-grid gap-2">
+
+                    <button class="btn btn-primary" type="button" >study about More</button>
+                    
+                  </div>
+
+            </div>
+            <div class="rightbox">
+                <div class="content">
+                    <h2>
+                        Valmiki Nagar National Park
+                    </h2>
+                    <img src="https://yesnearme.com/news/wp-content/uploads/2023/10/Add-a-heading.jpg" width="525px"
+                        height="">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7082.704545387147!2d83.9064273!3d27.42713015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39941566db8ec9f5%3A0x5d7875442b66599!2sBalmiki%20Nagar%2C%20Bihar%20845107!5e0!3m2!1sen!2sin!4v1706082828802!5m2!1sen!2sin" width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>Prior to independence, the Valmiki forests were owned by two erstwhile Zamindari Estates –
+                        Bettiah Raj and Ramnagar Raj. The forests were managed for timber production. The state
+                        government took over the management of Ramnagar Raj forests in 1950 and the Bettiah Raj forests
+                        in 1953 and 1954 under the Bihar Private Protected Forests Act (1947). Subsequently these
+                        forests got the status of “Protected Forest” by notification vide no C/PF-6036/52-87 R dated 6th
+                        January 1953 covering 909.86 sq.km. Out of these 909.86 sq. km., 8.73 sq. km. of Udaipur forest
+                        is far away from main forest of Valmiki and later declared as “Udaipur Wildlife Sanctuary”. From
+                        early sixties to 1974, the forests were under the management of the State Forest Department. The
+                        area was subjected to large scale afforestation with teak, semal, shisham and bamboo.
+                        Subsequently, in 1974, the entire forests were handed over to the Bihar State Forest Development
+                        Corporation on lease, which managed the forests with commercial objectives
+
+                    </p>
+                    <div class="d-grid gap-2">
+
+                        <button class="btn btn-primary" type="button">study about More</button>
+                        
+                      </div>
+
+                </div>
+
+            </div>
+            <div class="rightbox">
+                <div class="content">
+                    <h2>
+                        Dal Lake
+
+                    </h2>
+                    <img src="https://www.shutterstock.com/image-photo/view-dal-lake-winter-beautiful-600nw-2044050407.jpg" width="525px"
+                        height="">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52852.412567094565!2d74.85474459999999!3d34.113688749999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e185c268876847%3A0xbf6def9295995179!2sDal%20Lake!5e0!3m2!1sen!2sin!4v1706082913532!5m2!1sen!2sin" width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>
+                        डल झील मक्लोटगंज से पश्चिम की ओर 2 किमी है। झील देवदार के हरे-भरे वनों के बीच का घिरी हुई है , डल झील अपनी सुंदरता और तीर्थयात्रा केंद्र के लिए प्रसिद्ध है। दाल झील के आसपास का क्षेत्र प्राकृतिक स्वर्ग है। झील का क्षेत्र एक हेक्टेयर (यानी 10,000 वर्ग मीटर) के आसपास है।
+
+                    </p>
+                   
+                    <div class="d-grid gap-2">
+
+                        <button class="btn btn-primary" type="button">study about More</button>
+                        
+                      </div>
+
+                </div>
+
+            </div>
+            <div class="rightbox">
+                <div class="content">
+                    <h2>
+                        Taj Mahal 
+
+                    </h2>
+                    <img src="https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg" width="525px"
+                        height="">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.4005540576445!2d78.039567275234!3d27.175144776491745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747121d702ff6d%3A0xdd2ae4803f767dde!2sTaj%20Mahal!5e0!3m2!1sen!2sin!4v1706083061217!5m2!1sen!2sin" width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>
+                        The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+
+                    </p>
+                   
+                    <div class="d-grid gap-2">
+
+                        <button class="btn btn-primary" type="button">study about More</button>
+                        
+                      </div>
+
+                </div>
+
+            </div>
+            <h2>To contact Pooja Travels private limited</h2>
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">MassageBox</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div> 
+            
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
